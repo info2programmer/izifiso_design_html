@@ -9,11 +9,16 @@
 <title>IZIFISO_Contact_us</title>
 
 <!-- Bootstrap -->
-<link href="http://www.izifiso.com/testhp2/html/css/style.css" rel="stylesheet">
-<link href="http://www.izifiso.com/testhp2/html/css/responsive.css" rel="stylesheet">
-<link href="http://www.izifiso.com/testhp2/html/css/bootstrap.css" rel="stylesheet">
-<link href="http://www.izifiso.com/testhp2/html/css/font-awesome.css" rel="stylesheet">
-<script type="text/javascript" src="http://izifiso.com/sat.js"></script>
+<link href="css2/style.css" rel="stylesheet">
+  <link href="css2/responsive.css" rel="stylesheet">
+  <link href="css2/bootstrap.css" rel="stylesheet">
+  <link href="css2/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="css2/colorfultpt.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css2/venobox.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="js/venobox.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,7 +28,184 @@
     <![endif]-->
 </head>
 <body>
-<?php require 'header.php'; ?>
+<header class="main_menu">
+    <nav class="navbar navbar-default navbar-static-top" style="margin-right">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="index.html">IZIFISO</a> </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="about_us.html">About Us</a></li>
+              <li><a href="http://www.izifisotravelblogs.wordpress.com"  target="_blank">Blog</a></li>
+              <li><a href="listing.html">Bag Pack</a></li>
+              <li><a href="education_index.html">School Bag</a></li>
+              <li><a href="contact_us.html">Contact Us</a></li>
+              <script type="text/javascript">
+                function search(){
+                  var se = document.getElementById('se').value
+                  window.location = "http://www.izifiso.com/testhp2/html/search.php?stxt="+se;
+                }
+                function runScript(e) {
+                  if (e.keyCode == 13) {
+                    var se = document.getElementById('se').value;
+                    window.location = "http://www.izifiso.com/search/"+se;
+                    return false;
+                  }
+                }
+              </script>
+              <li class="serch_new hidden-sm">
+                <div id="custom-search-input">
+                  <div class="input-group">
+
+                    <input onkeypress="return runScript(event);" id="se" class="  search-query form-control" placeholder="" type="text">
+                    <span  class="input-group-btn">
+                      <button class="btn btn-danger" type="button">
+                        <span onclick="search();" class=" glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li><a target="_blank" href="https://www.instagram.com/izifiso/" class="google_plus"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCV_IFD-wv5Uofk7S6ZudWeg"  target="_blank" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/_izifiso_"  target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.facebook.com/izifiso/" target="_blank" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> <i class="fa fa-angle-down"></i> </a>
+                <ul class="dropdown-menu">
+
+                  <li style="display: "> <a href="#" data-toggle="modal" data-target="#LogInModal"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+                  <li style="display: none"><a href="http://www.izifiso.com/profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                  <li class="divider"></li>
+                  <li style="display: none"><a href="http://www.izifiso.com/testhp2/html/logout.php"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                </ul>
+              </li>
+              <li><a href="cart_view.html"  target="" class="youtube"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <!--/.nav-collapse --> 
+        </div>
+      </nav>
+
+
+<!--------------------------------------------------------start modal--------------------------------------->
+    <div class="modal fade" id="LogInModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> ×</button>
+            <h4 class="modal-title" id="myModalLabel">Welcome to Izifiso</h4>
+          </div>
+          <div class="modal-body padControl">
+            <div class="row">
+              <div class="col-md-7 modalLeftSide" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;"> 
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+                  <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div class="tab-pane active" id="Login">
+                    <form  method="POST" role="form" class="form-horizontal">
+                      <div class="form-group">
+                        <div class="col-sm-12">
+                          <script type="js/sat.js"></script>
+                          <script type="text/javascript">
+                            function xc(){
+                              post("email="+fetch('l1').value+"&password="+fetch('l2').value,'http://www.izifiso.com/testhp2/html/login.php',function (e) {
+              //alert(e);
+              if(e==1){
+
+                parent.refreshpage();
+              }
+              else{
+                alert("Wrong Password");
+              }
+          });
+                            }
+                          </script>
+                          <input type="email" class="login_form_control" id="l1" name="email" placeholder="Email" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-12 password-wraps">
+                          <input type="password" class="login_form_control" id="l2" name="password" id="exampleInputPassword1" placeholder="password" />
+                          <button type="button" class="showHide"><i class="glyphicon glyphicon-eye-open"></i></button>
+                        </div>
+                      </div>
+                      <div class="row btnHolder">
+                        <div class="col-sm-2"> </div>
+                        <div class="col-sm-5">
+                          <a href="#" data-toggle="modal" data-target="#ForgotPasswordModal">Forgot your password?</a>
+                        </div>
+                        <div class="col-sm-5">
+                          <button onclick="xc();" class="btn btn-custom SignUpBTN pull-right"> Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="tab-pane" id="Registration">
+                    <form role="form" class="form-horizontal">
+                      <div class="form-group">
+                        <div class="col-sm-12">
+                          <input type="text" class="login_form_control" id="name" placeholder="Name" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-12">
+                          <input type="email" class="login_form_control" id="email" placeholder="Email" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-12">
+                          <input type="email" class="login_form_control" id="mobile" placeholder="Mobile" />
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-12 password-wraps">
+                          <input type="password" class="login_form_control password" id="password" placeholder="Password" />
+                          <button type="button" class="showHide"><i class="glyphicon glyphicon-eye-open"></i></button>
+
+                        </div>
+                      </div>
+                      <div class="row btnHolder">
+                        <!--  <div class="col-sm-2"> </div>-->
+                        <div class="col-sm-12 BtnControl">
+                          <button type="button" class="btn btn-custom SignUpBTN"> Save & Continue</button>
+                          <button type="button" class="btn btn-custom_normal SignUpBTN"> Cancel</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div id="OR" class="hidden-xs"> OR</div>
+              </div>
+              <div class="col-md-5 scocial_bg">
+                <div class="row text-center sign-with">
+                  <div class="col-md-12">
+                    <h3>SOCIAL SIGN-IN</h3>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="btn-group btn-group-justified"> 
+                      <script type="text/javascript" src="http://www.izifiso.com/fblogin/fb.js"></script>
+                      <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fizifiso.com%2Fglogin%2Findex.php&client_id=140263103375-v0k3lrafajpmdq1ivmg9rapk67qktfjv.apps.googleusercontent.com&scope=email+profile+OpenID&access_type=online&approval_prompt=auto" class="btn btn-danger"> Google</a>
+
+                      <a href="#" scope="public_profile,email" onlogin="checkLoginState();"><i class="fa fa-facebook"></i></a>
+
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+
+</header>
 
 
 <!--------------- start body -------------------->

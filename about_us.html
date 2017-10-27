@@ -9,14 +9,14 @@
   <title>IZIFISO_about us</title>
 
   <!-- Our Team Resource start -->
-<script type='text/javascript' src='https://humaan.com/wp-content/themes/humaan/js/jquery-1.12.0.min.js'></script>
+<script type='text/javascript' src='js/jquery-1.12.0.min.js'></script>
 <script type="text/javascript">
   Raven.config('https://e8e1a2308f194b57a2b8e93acf772df3@sentry.io/163709').install()
   </script>
 <script src="https://cdn.ravenjs.com/3.14.2/raven.min.js"></script>
-  <link rel="stylesheet" href="https://humaan.com/wp-content/themes/humaan/css/humaan.css" media="screen">
-  <link rel="stylesheet" href="https://humaan.com/wp-content/themes/humaan/css/print.css" media="print">
-  <link rel="stylesheet" href="https://humaan.com/wp-content/themes/humaan/css/prism.css" media="screen">
+  <link rel="stylesheet" href="css2/humaan.css" media="screen">
+  <link rel="stylesheet" href="css2/print.css" media="print">
+  <link rel="stylesheet" href="css2/prism.css" media="screen">
 <!-- Our Team Resource end -->
 
   <!-- Bootstrap -->
@@ -323,32 +323,33 @@
   </head>
   <body>
     <header class="main_menu">
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="index.html">IZIFISO</a> </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="http://www.izifisotravelblogs.wordpress.com"  target="_blank">Blog</a></li>
-                <li><a href="http://www.izifiso.com/contactus">Contact Us</a></li>
-                <li><a href="http://www.izifiso.com/real_experience">Explore</a></li>
-                <script type="text/javascript">
-                  function search(){
-                    var se = document.getElementById('se').value
-                    window.location = "http://www.izifiso.com/testhp2/html/search.php?stxt="+se;
+      <nav class="navbar navbar-default navbar-static-top" style="margin-right">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="index.html">IZIFISO</a> </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="about_us.html">About Us</a></li>
+              <li><a href="http://www.izifisotravelblogs.wordpress.com"  target="_blank">Blog</a></li>
+              <li><a href="listing.html">Bag Pack</a></li>
+              <li><a href="education_index.html">School Bag</a></li>
+              <li><a href="contact_us.html">Contact Us</a></li>
+              <script type="text/javascript">
+                function search(){
+                  var se = document.getElementById('se').value
+                  window.location = "http://www.izifiso.com/testhp2/html/search.php?stxt="+se;
+                }
+                function runScript(e) {
+                  if (e.keyCode == 13) {
+                    var se = document.getElementById('se').value;
+                    window.location = "http://www.izifiso.com/search/"+se;
+                    return false;
                   }
-                  function runScript(e) {
-                    if (e.keyCode == 13) {
-                      var se = document.getElementById('se').value;
-                      window.location = "http://www.izifiso.com/search/"+se;
-                      return false;
-                    }
-                  }
-                </script>
-                <li class="serch_new hidden-sm">
-                 <div id="custom-search-input">
+                }
+              </script>
+              <li class="serch_new hidden-sm">
+                <div id="custom-search-input">
                   <div class="input-group">
 
                     <input onkeypress="return runScript(event);" id="se" class="  search-query form-control" placeholder="" type="text">
@@ -373,6 +374,7 @@
                   <li style="display: none"><a href="http://www.izifiso.com/testhp2/html/logout.php"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                 </ul>
               </li>
+              <li><a href="cart_view.html"  target="" class="youtube"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
             </ul>
           </div>
           <!--/.nav-collapse --> 
@@ -639,8 +641,8 @@ aria-hidden="true">
               <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/jay.mp4"></video>
               <div class="bio" style="font-size: 12px;color: white"  >
               <p>Jay has a healthy obsession with all things digital, strongly believing in the intersection of design and technology. Constantly exploring and prototyping new ideas, he'll jump at the chance to be involved in any aspect of a project. You may catch him reading Malcolm Gladwell or watching reruns of The Sopranos.</p>
-                <a class="bio-social bio-tw" href="http://www.twitter.com/jayhwd" target="_blank"><span class="ui-hidden">Jay on Twitter</span></a>
-                <a class="bio-social bio-ig" href="http://www.instagram.com/jayhollywood" target="_blank"><span class="ui-hidden">Jay on Instagram</span></a>
+                <!-- <a class="bio-social bio-tw" href="http://www.twitter.com/jayhwd" target="_blank"><span class="ui-hidden">Jay on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://www.instagram.com/jayhollywood" target="_blank"><span class="ui-hidden">Jay on Instagram</span></a> -->
               </div>
             </div>
             <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Jay Hollywood <br> <span style="font-size:12px;">Web Developer</span></h2>
@@ -650,8 +652,8 @@ aria-hidden="true">
               <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/karen.mp4"></video>
               <div class="bio" style="font-size: 12px;color: white">
                 <p>Lover of a good meme, Karen fancies both design and front-end development. She is an avid basketballer, runner and exercise junkie. Crocheting with a cup of tea in front of the telly? Yep you'll find her doing that, too.</p>
-                <a class="bio-social bio-tw" href="http://www.twitter.com/kazbok" target="_blank"><span class="ui-hidden">Karen on Twitter</span></a>
-                <a class="bio-social bio-ig" href="http://www.instagram.com/kazbok" target="_blank"><span class="ui-hidden">Karen on Instagram</span></a>
+               <!--  <a class="bio-social bio-tw" href="http://www.twitter.com/kazbok" target="_blank"><span class="ui-hidden">Karen on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://www.instagram.com/kazbok" target="_blank"><span class="ui-hidden">Karen on Instagram</span></a> -->
               </div>
             </div>
             <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Karen Hollywood <br> <span style="font-size:12px;">Web Developer</span>  </h2>

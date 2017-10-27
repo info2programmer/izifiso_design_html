@@ -28,32 +28,33 @@
   </head>
   <body>
     <header class="main_menu">
-      <nav class="navbar navbar-default navbar-static-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="index.html">IZIFISO</a> </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="about_us.html">About Us</a></li>
-                <li><a href="http://www.izifisotravelblogs.wordpress.com"  target="_blank">Blog</a></li>
-                <li><a href="http://www.izifiso.com/contactus">Contact Us</a></li>
-                <li><a href="http://www.izifiso.com/real_experience">Explore</a></li>
-                <script type="text/javascript">
-                  function search(){
-                    var se = document.getElementById('se').value
-                    window.location = "http://www.izifiso.com/testhp2/html/search.php?stxt="+se;
+      <nav class="navbar navbar-default navbar-static-top" style="margin-right">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a class="navbar-brand" href="index.html">IZIFISO</a> </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="about_us.html">About Us</a></li>
+              <li><a href="http://www.izifisotravelblogs.wordpress.com"  target="_blank">Blog</a></li>
+              <li><a href="listing.html">Bag Pack</a></li>
+              <li><a href="education_index.html">School Bag</a></li>
+              <li><a href="contact_us.html">Contact Us</a></li>
+              <script type="text/javascript">
+                function search(){
+                  var se = document.getElementById('se').value
+                  window.location = "http://www.izifiso.com/testhp2/html/search.php?stxt="+se;
+                }
+                function runScript(e) {
+                  if (e.keyCode == 13) {
+                    var se = document.getElementById('se').value;
+                    window.location = "http://www.izifiso.com/search/"+se;
+                    return false;
                   }
-                  function runScript(e) {
-                    if (e.keyCode == 13) {
-                      var se = document.getElementById('se').value;
-                      window.location = "http://www.izifiso.com/search/"+se;
-                      return false;
-                    }
-                  }
-                </script>
-                <li class="serch_new hidden-sm">
-                 <div id="custom-search-input">
+                }
+              </script>
+              <li class="serch_new hidden-sm">
+                <div id="custom-search-input">
                   <div class="input-group">
 
                     <input onkeypress="return runScript(event);" id="se" class="  search-query form-control" placeholder="" type="text">
@@ -78,6 +79,7 @@
                   <li style="display: none"><a href="http://www.izifiso.com/testhp2/html/logout.php"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
                 </ul>
               </li>
+              <li><a href="cart_view.html"  target="" class="youtube"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
             </ul>
           </div>
           <!--/.nav-collapse --> 
