@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Izifiso</title>
+
+<!-- Bootstrap -->
+
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/home_video_page.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/animation.css" rel="stylesheet">
+
+<!--google-fonts-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,400i,500,500i,600,700,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body  id="page-top" class="index">
+
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-bottom ">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      <a class="navbar-brand" href="index.html">IZIFISO</a> </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false">
+      <ul class="nav navbar-nav custom-home-navbar menu-center">
+        <li> <a href="#">About Us</a> </li>
+        <li> <a href="#">Blog</a> </li>
+        <li> <a href="#">Contact Us</a> </li>
+        <li> <a href="#">Log In</a> </li>
+      </ul>
+      <ul class=" nav social_media_nav">
+        <li><a href="#" class="google_plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+<!--- Header -->
+
+  <div class="content">
+    <div style="">
+      <div class="col-lg-12" >
+      <!-- <img src="images/dd.png" title="logo"> -->
+          <img src="images/dd.png" title="Izifiso Logo" style="height: 145px;margin-top:50px "><br/>
+          <h1 class="hl-text" style="padding: 0px 0px 0px" >
+            Your <span>Destination</span>
+          <br>
+            For <span>Experiential Trips</span></h1>
+        </div>
+    <div class="clearfix text-center">
+      <!--<ul class="btn-holder">
+        <li><a href="#">Virtual Experience</a></li>
+        <li><a href="#">Real Experience</a></li>
+      </ul>-->
+      <div class="col-md-6" >
+        <a href="#" class="btn-holder btnd" class="">Education</a>
+      </div>
+      <div class="col-md-6">
+        <a href="#" class="btn-holder">Expedition</a>
+      </div>
+  </div>
+    </div>
+    	
+  </div>
+  <!-- /content -->
+  
+  
+  
+
+<div class="header-container">
+
+  
+  <video id="my-video" class="video" muted loop autoplay  poster="images/Screenshot.png">
+    <source src="video/HOME_PAGE_18-feb-17.mp4" type="video/mp4">
+    <source src="video/HOME_PAGE_18-feb-17.webm"  type="video/webm">
+    <source src="video/HOME_PAGE_18-feb-17.ogv"  type="video/ogg">
+  </video>
+  <!-- /video --> 
+</div>
+<!--/header-container--> 
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script> 
+<script>
+(function() {
+  /**
+   * Video element
+   * @type {HTMLElement}
+   */
+  var video = document.getElementById("my-video");
+
+  /**
+   * Check if video can play, and play it
+   */
+  video.addEventListener( "canplay", function() {
+    video.play();
+  });
+})();
+</script>
+</body>
+</html>

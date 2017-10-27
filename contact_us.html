@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>IZIFISO_Contact_us</title>
+
+<!-- Bootstrap -->
+<link href="http://www.izifiso.com/testhp2/html/css/style.css" rel="stylesheet">
+<link href="http://www.izifiso.com/testhp2/html/css/responsive.css" rel="stylesheet">
+<link href="http://www.izifiso.com/testhp2/html/css/bootstrap.css" rel="stylesheet">
+<link href="http://www.izifiso.com/testhp2/html/css/font-awesome.css" rel="stylesheet">
+<script type="text/javascript" src="http://izifiso.com/sat.js"></script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<?php require 'header.php'; ?>
+
+
+<!--------------- start body -------------------->
+
+
+
+<br>
+  <section class="map">
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:372px;width:auto;'><div id='gmap_canvas' style='height:372px;width:auto;'></div><div><small><a href="http://embedgooglemaps.com">embed google maps</a></small></div><div><small><a href="https://enablejavascript.co">enable javascript</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:10,center:new google.maps.LatLng(22.4451577,88.2989887),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(22.4451577,88.2989887)});infowindow = new google.maps.InfoWindow({content:'<strong>Title</strong><br>W107, IIM CALCUTTA INNOVATION PARK JOKA, KOLKATA 700104 <br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+  </section><!--end map-->
+  
+    <section class="contact">
+   <div class="container">
+    <div class="row">
+     <div class="col-sm-8 contactleft">
+      <h3>LEAVE MESSAGE</h3>
+      <p>You can talk to our online representative at any time. Please use our Live Chat System on our website or Fill up below instant messaging programs.</p>
+      <div class="row">
+      <form action="../../forgetpassword/send.php" class="mainform" method="POST">
+           <div class="form-group col-md-6">
+            <input class="form-control" name="name" placeholder="Your Name" type="text">
+           </div>
+            <div class="form-group col-md-6">
+                <input class="form-control" name="phno" placeholder="Your Phone Number" type="text">
+            </div>
+            <div class="form-group col-md-12">
+                <input class="form-control" name="email" placeholder="Your Email Address" type="text">
+            </div>
+            <div class="form-group col-md-12">
+            <textarea class="form-control" style="height:103px;" name="comm" placeholder="Your Comments"></textarea>
+            </div>
+            <div class="col-md-12">
+            <input class="btn" type="submit" value="send now">
+            </div>
+      </form>
+      </div>
+     </div><!--end contactleft-->
+     <div class="col-sm-4 contactright">
+      <h3>Contact Infos</h3>
+      <ul class="info">
+       <li><img src="http://izifiso.com/testhp2/html/images/address.png" alt=""><span>Address 1:</span><br>W107, IIM CALCUTTA INNOVATION PARK<br>
+JOKA, KOLKATA 700104</li>
+<li><img src="http://izifiso.com/testhp2/html/images/address.png" alt=""><span>Address 2:</span><br>A/7,Ramkrishna Upanibesh , Jadavpur <br> Kolkata - 700092</li>
+       <li><img src="http://izifiso.com/testhp2/html/images/phone.png" alt=""><span>Call:</span><br><a href="#">+91 7738393791</a></li>
+       <li><img src="http://izifiso.com/testhp2/html/images/email.png" alt=""><span>Email:</span><br><a href="#">admin@izifiso.com</a></li>
+      </ul>
+     </div><!--end contactright-->
+    </div>
+   </div>
+  </section><!--end contact-->
+
+<!--------------- end body -------------------->
+<footer class="footer_line">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-sm-6">
+        <div class="copyright_text">
+          <p>&copy; www.izifiso.com 2017</p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="right_footer">
+          <p> All Rights are Reserved <a href="https://www.instagram.com/izifiso/" target="_blank" class="google_plus"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a href="https://www.youtube.com/channel/UCV_IFD-wv5Uofk7S6ZudWeg" target="_blank" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a> <a href="https://twitter.com/_izifiso_" target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a href="https://www.facebook.com/izifiso/" target="_blank" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="http://www.izifiso.com/testhp2/html/js/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="http://www.izifiso.com/testhp2/html/js/bootstrap.min.js"></script>
+
+<!---------------------------login and forgot password js 23-03-2017---------------------------->
+<script type="text/javascript">
+ $(document).ready(function() {
+  $('#olvidado').click(function(e) {
+    e.preventDefault();
+    $('div#form-olvidado').toggle('500');
+  });
+  $('#acceso').click(function(e) {
+    e.preventDefault();
+    $('div#form-olvidado').toggle('500');
+  });
+});
+</script>
+<!---------------------------login and forgot password js 23-03-2017---------------------------->
+
+</body>
+</html>

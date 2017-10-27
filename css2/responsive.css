@@ -1,0 +1,487 @@
+@media (min-width:1200px){
+
+
+.hl-text {
+	font-size:60px;
+	padding:80px 0 0;
+}
+.menu-center {
+	padding: 0;
+	margin: 0 0 0 -156px;
+	width: 397px;
+	position: absolute;
+	left: 50%;
+}
+
+}
+
+
+
+@media (min-width:992px) and (max-width:1199px) {
+
+.hl-text {
+	font-size:60px;
+	padding:80px 0 0;
+}
+.headline_experiences .carousel-control.left {
+	left: 0;
+}
+.headline_experiences .carousel-control.right {
+	right: 0;
+}
+.menu-center {
+	padding: 0;
+	margin: 0 0 0 -165px;
+	width: 312px;
+	position: absolute;
+	left: 50%;
+}
+.lefttab .nav-tabs > li > a {
+	font-size: 14px;
+}
+
+
+}
+
+
+
+@media (min-width:768px) and (max-width:991px){
+
+
+.hl-text {
+	font-size:60px;
+	padding:60px 0 0;
+}
+#mainNav .nav > li > a {
+	padding: 10px 4px;
+}
+#mainNav .navbar-brand {
+	line-height: 10px;
+}
+.per_head {
+	padding: 0;
+	margin-top: 0;
+	border: 1px solid #6F6F6F;
+}
+
+
+/*-------------- start 2017-03-04 ------------------*/
+
+
+.headline_experiences .carousel-control.right {
+	right:0;
+}
+.headline_experiences .carousel-control.left, .headline_experiences .carousel-control.right {
+	width:10%;
+}
+.headline_experiences .carousel-control.left {
+	left:0;
+}
+.menu-center {
+	padding: 0;
+	margin:0 0 0 -133px;
+	width: 246px;
+	position: absolute;
+	left: 50%;
+}
+.social_media_nav li a.google_plus, .social_media_nav li a.youtube, .social_media_nav li a.twitter, .social_media_nav li a.facebook {
+	color: #000;
+	font-size: 30px;
+	padding:0 !important;
+	margin: 0 0 0 10px;
+}
+.social_media_nav li a.google_plus:hover, .social_media_nav li a.google_plus:focus, .social_media_nav li a.youtube:hover, .social_media_nav li a.youtube:focus, .social_media_nav li a.twitter:hover, .social_media_nav li a.twitter:focus, .social_media_nav li a.facebook:hover, .social_media_nav li a.facebook:focus {
+	color: #000;
+	font-size: 30px;
+	padding:0 !important;
+	margin: 0 0 0 10px;
+	background-color: transparent;
+}
+
+
+/*-------------- end 2017-03-04 ------------------*/
+
+/*-------------- end 2017-03-15 ------------------*/
+.service h3 {
+	font-size: 16px;
+}
+.about_top h3 {
+	font-size: 21px;
+}
+.profle_inner .profile_pic {
+	/*margin: 195px 0 0 198px;*/
+	text-align: center;
+	width: 300px;
+	/* position: absolute; */
+}
+.serch_new .form-control {
+	max-width: 100%;
+}
+.serch_new #custom-search-input {
+	margin: 10px 0 10px 15px;
+}
+
+
+/*----dk------------*/
+.scocial_bg {
+	height: 110px;
+}
+	
+
+
+}
+
+
+@media (min-width:500px) and (max-width:767px){
+	
+	
+	
+
+	
+
+.btn-holder li {
+	float:left;
+	padding-right: 0px;
+	display:inline-block;
+}
+.hl-text {
+	font-size: 40px;
+	padding: 90px 0 0;
+}
+#mainNav .navbar-toggle {
+	background-color: #000;
+}
+#mainNav .navbar-default .navbar-toggle:focus, #mainNav .navbar-default .navbar-toggle:hover {
+	background-color: #000;
+}
+#mainNav .navbar-default .navbar-toggle {
+	border-color: transparent;
+}
+#mainNav .navbar-brand {
+	font-size: 31px;
+}
+
+
+/*-------------- start 2017-03-04 ------------------*/
+
+
+.headline_experiences .carousel-control.right {
+	right:0;
+}
+.headline_experiences .carousel-control.left, .headline_experiences .carousel-control.right {
+	width:10%;
+}
+.headline_experiences .carousel-control.left {
+	left:0;
+}
+.block-text{
+	text-align:center;
+}
+.headline_experiences h2 {
+	text-align: center;
+}
+.headline_experiences h2 {
+	font-size: 16px;
+}
+.main_menu .navbar-toggle {
+	background-color: #000;
+}
+.main_menu .navbar-default .navbar-toggle {
+	border-color: #000;
+}
+.main_menu .navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+.main_menu .navbar-default .navbar-toggle:hover, .main_menu .navbar-default .navbar-toggle:focus {
+	background-color: #000;
+}
+.featured_gry_bg h2 {
+	text-align: center;
+}
+.featured_img {
+	text-align: center;
+}
+.menu-center{
+	text-align:center;
+}
+.social_media_nav {
+	display: block;
+	list-style-type: none;
+	 float:none; 
+	width: 190px;
+	margin: 0 auto;
+}
+.social_media_nav li a.google_plus, .social_media_nav li a.youtube, .social_media_nav li a.twitter, .social_media_nav li a.facebook {
+	color: #000;
+	font-size: 20px;
+	padding: 0;
+	margin: 0 0 0 22px;
+}
+.social_media_nav li a.google_plus:hover, .social_media_nav li a.google_plus:focus, .social_media_nav li a.youtube:hover, .social_media_nav li a.youtube:focus,.social_media_nav li a.twitter:hover, .social_media_nav li a.twitter:focus, .social_media_nav li a.facebook:hover, .social_media_nav li a.facebook:focus {
+	color: #000;
+	font-size: 20px;
+	padding: 0;
+	margin: 0 0 0 22px;
+	background-color: transparent;
+}
+#mainNav .navbar-collapse {
+	border-top: 0px solid transparent;
+}
+
+
+/*-------------- end 2017-03-04 ------------------*/
+
+.main_menu .navbar-nav {
+	text-align: center;
+}
+.copyright_text p{
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+.right_footer p{
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+.per_head {
+	padding: 0;
+	margin-top: 0;
+	border: 1px solid #6F6F6F;
+}
+/*----------------------------start 15-03-2017---------------------------*/
+.about_top h3 {
+	font-size: 16px;
+	line-height: 26px;
+}
+.about_top p {
+	font-size: 13px;
+	line-height: 24px;
+}
+.profle_inner .profile_pic {
+	text-align: center;
+	width: 300px;
+	margin: 0 auto;
+}
+.tabsection .nav-tabs > li {
+	float:none !important;
+}
+.serch_new .form-control {
+	max-width: 100%;
+}
+.tab-content > .tab-pane {
+	text-align: center;
+}
+.contactleft .mainform {
+	padding: 30px 0 0 0;
+}
+.contactright{
+	padding-top:40px;
+}
+.pageheader {
+	padding: 20px 0;
+}
+
+
+/*------------dk----------------*/
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #000 !important;
+}
+
+.BtnControl {
+    text-align: center;
+}
+/*----dk------------*/
+.scocial_bg {
+	height: 110px;
+}
+
+
+
+}
+
+
+@media (min-width:320px) and (max-width:499px){
+
+
+.btn-holder li {
+	float:left;
+	padding-right: 0px;
+	display:inline-block;
+}
+.hl-text {
+	font-size: 25px;
+	padding: 82px 0 0;
+}
+#mainNav .navbar-toggle {
+	background-color: #000;
+}
+#mainNav .navbar-default .navbar-toggle:focus, #mainNav .navbar-default .navbar-toggle:hover {
+	background-color: #000;
+}
+#mainNav .navbar-default .navbar-toggle {
+	border-color: transparent;
+}
+#mainNav .navbar-brand {
+	font-size: 31px;
+}
+#mainNav .navbar-collapse {
+	border-top: 0px solid transparent;
+}
+
+
+/*-------------- start 2017-03-04 ------------------*/
+
+
+/*.headline_experiences .carousel-control.right {
+	right:0;
+}
+.headline_experiences .carousel-control.left, .headline_experiences .carousel-control.right {
+	width:10%;
+}
+.headline_experiences .carousel-control.left {
+	left:0;
+}*/
+.block-text{
+	text-align:center;
+}
+.headline_experiences h2 {
+	text-align: center;
+}
+.headline_experiences h2 {
+	font-size: 16px;
+}
+.main_menu .navbar-toggle {
+	background-color: #000;
+}
+.main_menu .navbar-default .navbar-toggle {
+	border-color: #000;
+}
+.main_menu .navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+.main_menu .navbar-default .navbar-toggle:hover, .main_menu .navbar-default .navbar-toggle:focus {
+	background-color: #000;
+}
+.featured_gry_bg h2 {
+	text-align: center;
+}
+.featured_img {
+	text-align: center;
+}
+.menu-center{
+	text-align:center;
+}
+.social_media_nav {
+	display: block;
+	list-style-type: none;
+	 float:none; 
+	width: 190px;
+	margin: 0 auto;
+}
+.social_media_nav li a.google_plus, .social_media_nav li a.youtube, .social_media_nav li a.twitter, .social_media_nav li a.facebook {
+	color: #000;
+	font-size: 20px;
+	padding: 0;
+	margin: 0 0 0 22px;
+}
+.social_media_nav li a.google_plus:hover, .social_media_nav li a.google_plus:focus, .social_media_nav li a.youtube:hover, .social_media_nav li a.youtube:focus,.social_media_nav li a.twitter:hover, .social_media_nav li a.twitter:focus, .social_media_nav li a.facebook:hover, .social_media_nav li a.facebook:focus {
+	color: #000;
+	font-size: 20px;
+	padding: 0;
+	margin: 0 0 0 22px;
+	background-color: transparent;
+}
+
+/*-------------- end 2017-03-04 ------------------*/
+
+
+.main_menu .navbar-nav {
+	text-align: center;
+}
+.copyright_text p{
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+.right_footer p{
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+.per_head {
+	padding: 0;
+	margin-top: 0;
+	border: 1px solid #6F6F6F;
+}
+/*----------------------------start 15-03-2017---------------------------*/
+.about_top h3 {
+	font-size: 16px;
+	line-height: 26px;
+}
+.about_top p {
+	font-size: 13px;
+	line-height: 24px;
+}
+.testimonialbg h2 {
+	font-size: 24px;
+	padding: 0 0 20px 0;
+}
+.tabsection .nav-tabs > li {
+	float:none !important;
+}
+.serch_new .form-control {
+	max-width: 100%;
+}
+.tab-content > .tab-pane {
+	text-align: center;
+}
+.contactleft .mainform {
+	padding: 30px 0 0 0;
+}
+.contactright{
+	padding-top:40px;
+}
+.pageheader {
+	padding: 20px 0;
+}
+
+/*----dk------------*/
+.scocial_bg {
+	height: 110px !important;
+}
+
+.BtnControl {
+	text-align:center;
+	margin-top:10px;
+}
+
+
+}
+
+
+/*-------------------------start 28-03-2017-------------------*/
+
+@media (min-width:992px){
+.serch_new .input-group-addon, .input-group-btn, .input-group .form-control {
+ display: block !important;
+}
+.serch_new #custom-search-input button {
+ margin-top:6px;
+}
+}
+
+/*-------------------------end 28-03-2017-------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+

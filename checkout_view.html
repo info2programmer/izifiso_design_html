@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>IZIFISO</title>
+
+	<!-- Bootstrap -->
+	<link href="css2/style.css" rel="stylesheet">
+	<link href="css2/responsive.css" rel="stylesheet">
+	<link href="css2/bootstrap.css" rel="stylesheet">
+	<link href="css2/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="css2/colorfultpt.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="css2/venobox.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="js/venobox.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+ <style type="text/css">
+ 	.col-md-6{
+ 		padding-bottom:8px;
+ 	}
+ 	.col-md-12{
+ 		padding-bottom:8px;
+ 	}
+ 	.oneb a{
+ 		margin-right:3px;
+ 	}
+ </style>
+
+</head>
+<body>
+	<header class="main_menu">
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+					<a class="navbar-brand" href="index.html">IZIFISO</a> </div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="about_us.html">About Us</a></li>
+							<li><a href="http://www.izifisotravelblogs.wordpress.com"  target="_blank">Blog</a></li>
+							<li><a href="http://www.izifiso.com/contactus">Contact Us</a></li>
+							<li><a href="http://www.izifiso.com/real_experience">Explore</a></li>
+							<script type="text/javascript">
+								function search(){
+									var se = document.getElementById('se').value
+									window.location = "http://www.izifiso.com/testhp2/html/search.php?stxt="+se;
+								}
+								function runScript(e) {
+									if (e.keyCode == 13) {
+										var se = document.getElementById('se').value;
+										window.location = "http://www.izifiso.com/search/"+se;
+										return false;
+									}
+								}
+							</script>
+							<li class="serch_new hidden-sm">
+								<div id="custom-search-input">
+									<div class="input-group">
+
+										<input onkeypress="return runScript(event);" id="se" class="  search-query form-control" placeholder="" type="text">
+										<span  class="input-group-btn">
+											<button class="btn btn-danger" type="button">
+												<span onclick="search();" class=" glyphicon glyphicon-search"></span>
+											</button>
+										</span>
+									</div>
+								</div>
+							</li>
+							<li><a target="_blank" href="https://www.instagram.com/izifiso/" class="google_plus"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UCV_IFD-wv5Uofk7S6ZudWeg"  target="_blank" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+							<li><a href="https://twitter.com/_izifiso_"  target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+							<li><a href="https://www.facebook.com/izifiso/" target="_blank" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+							<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> <i class="fa fa-angle-down"></i> </a>
+								<ul class="dropdown-menu">
+
+									<li style="display: "> <a href="#" data-toggle="modal" data-target="#LogInModal"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+									<li style="display: none"><a href="http://www.izifiso.com/profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+									<li class="divider"></li>
+									<li style="display: none"><a href="http://www.izifiso.com/testhp2/html/logout.php"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+								</ul>
+							</li>
+							<li><a href=""  target="_blank" class="youtube"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+						</ul>
+					</div>
+					<!--/.nav-collapse --> 
+				</div>
+			</nav>
+
+
+<!--------------------------------------------------------start modal--------------------------------------->
+    <div class="modal fade" id="LogInModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> ×</button>
+            <h4 class="modal-title" id="myModalLabel">Welcome to Izifiso</h4>
+          </div>
+          <div class="modal-body padControl">
+            <div class="row">
+              <div class="col-md-7 modalLeftSide" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;"> 
+              	<!-- Nav tabs -->
+              	<ul class="nav nav-tabs">
+              		<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+              		<li><a href="#Registration" data-toggle="tab">Registration</a></li>
+              	</ul>
+              	<!-- Tab panes -->
+              	<div class="tab-content">
+              		<div class="tab-pane active" id="Login">
+              			<form  method="POST" role="form" class="form-horizontal">
+              				<div class="form-group">
+              					<div class="col-sm-12">
+              						<script type="js/sat.js"></script>
+              						<script type="text/javascript">
+              							function xc(){
+              								post("email="+fetch('l1').value+"&password="+fetch('l2').value,'http://www.izifiso.com/testhp2/html/login.php',function (e) {
+              //alert(e);
+              if(e==1){
+
+              	parent.refreshpage();
+              }
+              else{
+              	alert("Wrong Password");
+              }
+          });
+              							}
+              						</script>
+              						<input type="email" class="login_form_control" id="l1" name="email" placeholder="Email" />
+              					</div>
+              				</div>
+              				<div class="form-group">
+              					<div class="col-sm-12 password-wraps">
+              						<input type="password" class="login_form_control" id="l2" name="password" id="exampleInputPassword1" placeholder="password" />
+              						<button type="button" class="showHide"><i class="glyphicon glyphicon-eye-open"></i></button>
+              					</div>
+              				</div>
+              				<div class="row btnHolder">
+              					<div class="col-sm-2"> </div>
+              					<div class="col-sm-5">
+              						<a href="#" data-toggle="modal" data-target="#ForgotPasswordModal">Forgot your password?</a>
+              					</div>
+              					<div class="col-sm-5">
+              						<button onclick="xc();" class="btn btn-custom SignUpBTN pull-right"> Submit</button>
+              					</div>
+              				</div>
+              			</form>
+              		</div>
+              		<div class="tab-pane" id="Registration">
+              			<form role="form" class="form-horizontal">
+              				<div class="form-group">
+              					<div class="col-sm-12">
+              						<input type="text" class="login_form_control" id="name" placeholder="Name" />
+              					</div>
+              				</div>
+              				<div class="form-group">
+              					<div class="col-sm-12">
+              						<input type="email" class="login_form_control" id="email" placeholder="Email" />
+              					</div>
+              				</div>
+              				<div class="form-group">
+              					<div class="col-sm-12">
+              						<input type="email" class="login_form_control" id="mobile" placeholder="Mobile" />
+              					</div>
+              				</div>
+              				<div class="form-group">
+              					<div class="col-sm-12 password-wraps">
+              						<input type="password" class="login_form_control password" id="password" placeholder="Password" />
+              						<button type="button" class="showHide"><i class="glyphicon glyphicon-eye-open"></i></button>
+
+              					</div>
+              				</div>
+              				<div class="row btnHolder">
+              					<!--  <div class="col-sm-2"> </div>-->
+              					<div class="col-sm-12 BtnControl">
+              						<button type="button" class="btn btn-custom SignUpBTN"> Save & Continue</button>
+              						<button type="button" class="btn btn-custom_normal SignUpBTN"> Cancel</button>
+              					</div>
+              				</div>
+              			</form>
+              		</div>
+              	</div>
+              	<div id="OR" class="hidden-xs"> OR</div>
+              </div>
+              <div class="col-md-5 scocial_bg">
+              	<div class="row text-center sign-with">
+              		<div class="col-md-12">
+              			<h3>SOCIAL SIGN-IN</h3>
+              		</div>
+              		<div class="col-md-12">
+              			<div class="btn-group btn-group-justified"> 
+              				<script type="text/javascript" src="http://www.izifiso.com/fblogin/fb.js"></script>
+              				<a href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fizifiso.com%2Fglogin%2Findex.php&client_id=140263103375-v0k3lrafajpmdq1ivmg9rapk67qktfjv.apps.googleusercontent.com&scope=email+profile+OpenID&access_type=online&approval_prompt=auto" class="btn btn-danger"> Google</a>
+
+              				<a href="#" scope="public_profile,email" onlogin="checkLoginState();"><i class="fa fa-facebook"></i></a>
+
+              				<br>
+              			</div>
+              		</div>
+              	</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+<!--------------------------------------------------------end modal--------------------------------------->
+</header>
+
+
+<!--------------- start body -------------------->
+
+<section class="headline_experiences">
+	<div class="title">CHECKOUT</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading ">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">DELIVERY ADDRESS</a>
+							</h4>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<form action="http://bivapublication.com/ci/home/order" method="post" accept-charset="utf-8">
+									<div class="col-md-6">
+										<label for="txtName">NAME<sup>*</sup> </label>
+										<input type="text" name="txtName" value="" id="txtName" class="form-control" required="required" placeholder="Name">
+									</div>
+									<div class="col-md-6">
+										<label for="txtPhone">PHONE NUMBER <sup>*</sup></label>
+										<input type="number" name="txtPhone" value="" id="txtPhone" class="form-control" required="required" placeholder="Phone Number">
+									</div>
+									<div class="col-md-6">
+										<label for="txtAddress1">ADDRESS LINE 1<sup>*</sup> </label>
+										<textarea name="txtAddress1" cols="26" rows="2" id="txtAddress1" class="form-control" required="required" placeholder="Address Line 1"></textarea>
+									</div>
+									<div class="col-md-6">
+										<label for="txtAddress2">ADDRESS LINE 2 </label>
+										<textarea name="txtAddress2" cols="26" rows="2" id="txtAddress2" class="form-control" placeholder="Address Line 2"></textarea>
+									</div>
+									<div class="col-md-6">
+										<label for="txtAddress3">ADDRESS LINE 3</label>
+										<textarea name="txtAddress3" cols="26" rows="2" id="txtAddress3" class="form-control" placeholder="Address Line 3"></textarea>
+									</div>
+									<div class="col-md-6">
+										<label for="txtAddress4">ADDRESS LINE 4 </label>
+										<textarea name="txtAddress4" cols="26" rows="2" id="txtAddress4" class="form-control" placeholder="Address Line 4"></textarea>
+									</div>
+									<div class="col-md-6">
+										<label for="txtCity">CITY <sup>*</sup></label>
+										<input type="text" name="txtCity" value="" id="txtCity" class="form-control" required="required" placeholder="City">
+									</div>
+									<div class="col-md-6">
+										<label for="txtPin">PIN CODE <sup>*</sup>
+										</label>
+										<input type="number" name="txtPin" value="" id="txtPin" class="form-control" required="required" placeholder="Pin" maxlength="6" onblur="checkcashondelivery(this.value)">
+									</div>
+
+
+
+									<div class="col-md-6">
+										<label for="txtLandmark">LANDMARK
+										</label>
+										<input type="text" name="txtLandmark" value="" id="txtLandmark" class="form-control" placeholder="Landmark">
+									</div>
+
+									<div class="col-md-6">
+										<label for="ddlState">STATE <sup>*</sup> </label>
+
+										<select class="form-control" required="" aria-required="true" id="ddlState" name="ddlState">
+											<option value="">Choose</option>
+											<option value="Andaman and Nicobar">Andaman and Nicobar</option>
+											<option value="Andhra Pradesh">Andhra Pradesh</option>
+											<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+											<option value="Assam">Assam</option>
+											<option value="Bihar">Bihar</option>
+											<option value="Chandigarh">Chandigarh</option>
+											<option value="Chhattisgarh">Chhattisgarh</option>
+											<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+											<option value="Daman and Diu">Daman and Diu </option>
+											<option value="Delhi">Delhi</option>
+											<option value="Goa">Goa</option>
+											<option value="Gujarat">Gujarat</option>
+											<option value="Haryana">Haryana</option>
+											<option value="Himachal Pradesh">Himachal Pradesh</option>
+											<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+											<option value="Jharkhand">Jharkhand</option>
+											<option value="Karnataka">Karnataka</option>
+											<option value="Kerala">Kerala</option>
+											<option value="Lakshadweep">Lakshadweep </option>
+											<option value="Madhya Pradesh">Madhya Pradesh</option>
+											<option value="Maharashtra">Maharashtra</option>
+											<option value="Manipur">Manipur</option>
+											<option value="Meghalaya">Meghalaya</option>
+											<option value="Mizoram">Mizoram</option>
+											<option value="Nagaland">Nagaland</option>
+											<option value="Odisha">Odisha</option>
+											<option value="Puducherry">Puducherry</option>
+											<option value="Punjab">Punjab</option>
+											<option value="Rajasthan">Rajasthan</option>
+											<option value="Sikkim">Sikkim</option>
+											<option value="Tamil Nadu">Tamil Nadu</option>
+											<option value="Telangana">Telangana</option>
+											<option value="Tripura">Tripura</option>
+											<option value="Uttar Pradesh">Uttar Pradesh</option>
+											<option value="Uttarakhand">Uttarakhand</option>
+											<option value="West Bengal">West Bengal</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="InputName">Country </label>
+										<input required="" type="text" class="form-control" id="" value="India (Service Available In India Only)" disabled="">
+									</div>
+									<div class="col-md-6">
+										<label for="txtEmail">Email Id<sup>*</sup> </label>
+										<input type="email" name="txtEmail" value="" id="txtEmail" class="form-control" required="required" placeholder="Email">
+									</div>
+									<div class="col-md-12">
+										<label for="txtSpecialNote">Special Note </label>
+										<textarea name="txtSpecialNote" cols="40" rows="10" id="txtSpecialNote" class="form-control" placeholder="If you Have Any Notes Then Fill Free To Tell Us"></textarea>
+									</div>
+
+									<div class="col-md-12">
+										<a class="btn btn-success coupon pull-right nxt" role="button" data-toggle="collapse" data-parent="#accordion" href="javascript:void(0);" id="nextStape" onclick="validatefield()
+										" aria-expanded="false">NEXT</a>
+									</div>
+								</form></div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="javascript:void(0);" id="odersmmry" onclick="validatefield()">ORDER SUMMERY</a>
+								</h4>
+							</div>
+							<div id="collapse2" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="col-md-12">
+										<div class="table-responsive">
+											<table class="table">
+												<thead>
+													<tr>
+														<th>Order Amount</th>
+														<th>62/-</th>
+													</tr>
+												</thead>
+												<tbody>
+
+													<tr>
+														<td>Referral Discount</td>
+														<td>
+															<span id="referraldiscount">0</span>%
+															&nbsp;<sup><span class="glyphicon glyphicon-star" aria-hidden="true"></span></sup>
+															<input type="hidden" name="txtReferralDiscount" value="">
+														</td>
+													</tr>
+													<tr>
+														<td>Coupon Discount</td>
+														<td id="coupondiscount">....</td>
+													</tr>
+													<tr>
+														<td>Redeem Discount</td>
+														<td id="RedeemDiscount">....</td>
+													</tr>
+													<tr>
+														<td>Shipping Charge</td>
+														<td id="shippingcharhe"></td>
+													</tr>
+													<tr class="bg-info">
+														<td>Total</td>
+														<td id="totalamountwithdelivery"></td>
+													</tr>
+													<tr class="bg-warning">
+														<td colspan="2">
+															<label class="checkbox-inline"><h5>
+																<input type="checkbox" name="chkRedeem" id="chkRedeem" onchange="redeempoints()"> Redeem Points
+															</h5></label>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">
+															<div class="">
+																<input class="couponForm" id="txtCouponCode" type="text" placeholder="Coupon code" name="txtCouponCode">
+																<button class=" btn btn-success coupon" id="btnApply" onclick="checkcoupon()" type="button">Apply!</button>&nbsp;<button style="display:none;" class="btn btn-danger coupon" onclick="pagereload();" id="btnRemove">Remove Coupon</button>
+																<br>
+																<h4 id="couponmessage" style="font-weight:bold"></h4>
+															</div>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div class="col-md-12 oneb">
+
+										<a class="btn btn-success coupon pull-right  nxt " role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#collapse3">NEXT</a> &nbsp;&nbsp;
+
+
+										<a class="btn btn-success coupon pull-right  nxt" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#collapse1">BACK</a>
+									</div>
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										<p><span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="javascript:void(0);" id="paymnt">PAYMENT METHOD</a>
+								</h4>
+							</div>
+							<div id="collapse3" class="panel-collapse collapse">
+								<div class="panel-body">
+									<div class="col-md-12">
+										<div class="form-group required">
+											<label for="InputState">PAYMENT METHOD <sup>*</sup> </label>
+											<select name="ddlPaymentType" id="ddlPaymentType" required="" class="form-control">
+												<option value="">Choose</option>
+												<option value="online">ONLINE PAYMENT</option>
+												<option id="COD" value="cod">CASH ON DELIVERY</option>
+											</select>
+											<h4 id="codstatus" style="color:red;font-weight:bold;"></h4>
+										</div>
+									</div>
+
+									<div class="col-md-12 oneb">
+										<button type="submit" name="btnsubmit" class="btn btn-success coupon pull-right nxt">Order &nbsp; <i class="fa fa-arrow-circle-right"></i></button> &nbsp;&nbsp;
+
+
+										<a class="btn btn-success coupon pull-right  nxt" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" href="#collapse2">BACK</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		$( ".fa-heart" ).click(function() {
+			$( this ).toggleClass( "active_like" );
+		});
+	</script>
+
+	<script type="text/javascript">
+		$("[data-fancybox]").fancybox({
+            // Options will go here
+        });
+    </script>
+
+<script type="text/javascript">
+	function validatefield(){
+		var name=document.getElementById("txtName").value;
+		var phone=document.getElementById("txtPhone").value;
+		var Address=document.getElementById("txtAddress1").value;
+		var city=document.getElementById("txtCity").value;
+		var pin=document.getElementById("txtPin").value;
+		var email=document.getElementById("txtEmail").value;
+		var state=document.getElementById("ddlState").value;
+
+		if(document.getElementById("txtName").value=="" || document.getElementById("txtPhone").value=="" || document.getElementById("txtAddress1").value=="" || document.getElementById("txtCity").value=="" || document.getElementById("txtPin").value=="" || document.getElementById("txtEmail").value=="" || document.getElementById("ddlState").value==""){
+			// alert('Please Enter All');
+			if(name==""){
+				document.getElementById("txtName").style="border-color:red;";
+				alert("Name field is required");
+			}
+			if(phone==""){
+				document.getElementById("txtPhone").style="border-color:red;";
+				alert("Phone Number field is required");
+			}
+			if(Address==""){
+				document.getElementById("txtAddress1").style="border-color:red;";
+				alert("Address field is required");
+			}
+			if(city==""){
+				document.getElementById("txtCity").style="border-color:red;";
+				alert("City field is required");
+			}
+			if(email==""){
+				document.getElementById("txtEmail").style="border-color:red;";
+				alert("Email field is required");
+			}
+			if(pin==""){
+				document.getElementById("txtPin").style="border-color:red;";
+				alert("Pin field is required");
+			}
+			if(state==""){
+				document.getElementById("ddlState").style="border-color:red;";
+				alert("State field is required");
+			}
+		}
+		else{
+			//alert();
+			document.getElementById("nextStape").href="#collapse2";
+			document.getElementById("odersmmry").href="#collapse2";
+			document.getElementById("paymnt").href="#collapse3";
+			calculateShippingcharge();
+			checkcashondelivery(document.getElementById("txtPin").value);
+		}
+	}
+
+</script>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+
+
+    <!---------------------------login and forgot password js 23-03-2017---------------------------->
+
+</body>
+</html>

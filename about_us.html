@@ -1,0 +1,1013 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>IZIFISO_about us</title>
+
+  <!-- Our Team Resource start -->
+<script type='text/javascript' src='https://humaan.com/wp-content/themes/humaan/js/jquery-1.12.0.min.js'></script>
+<script type="text/javascript">
+  Raven.config('https://e8e1a2308f194b57a2b8e93acf772df3@sentry.io/163709').install()
+  </script>
+<script src="https://cdn.ravenjs.com/3.14.2/raven.min.js"></script>
+  <link rel="stylesheet" href="https://humaan.com/wp-content/themes/humaan/css/humaan.css" media="screen">
+  <link rel="stylesheet" href="https://humaan.com/wp-content/themes/humaan/css/print.css" media="print">
+  <link rel="stylesheet" href="https://humaan.com/wp-content/themes/humaan/css/prism.css" media="screen">
+<!-- Our Team Resource end -->
+
+  <!-- Bootstrap -->
+  <link href="css2/style.css" rel="stylesheet">
+  <link href="css2/responsive.css" rel="stylesheet">
+  <link href="css2/bootstrap.css" rel="stylesheet">
+  <link href="css2/font-awesome.css" rel="stylesheet">
+  <style>
+  // Ease
+
+  $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  $easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+  }
+
+  ul {
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .slider--teams {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    max-width: 750px;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    .slider--teams__team {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  #list {
+    position: relative;
+    backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+    li {
+      position: relative;
+      display: inline-block;
+      float: left;
+      text-align: center;
+      figure {
+        cursor: pointer;
+        margin: 1em;
+        opacity: 0.5;
+        backface-visibility: hidden;
+        transition: transform 450ms $easeInOutSine, opacity 450ms ease-in-out;
+        transform: scale(0.5) translateZ(0px);
+        &:hover {
+          opacity: 0.8;
+          transform: scale(0.6) translateZ(0px);
+        }
+        &:active {
+          opacity: 1;
+          transform: scale(0.7) translateZ(0px);
+        }
+        > div {
+          border-radius: 5px;
+          position: relative;
+          margin: 2rem auto;
+          width: 120px;
+          height: 120px;
+          overflow: hidden;
+          transform: rotate(45deg) translateZ(0px);
+          > div {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/953/teams.jpg) no-repeat;
+            background-size: cover;
+            background-position: 0px 0px; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 170px;
+            height: 170px;
+            transform: rotate(-45deg) translate(0%, -70%);
+          }
+        }
+        figcaption {
+          h2 {
+            color: #333;
+            font-size: 1.6rem;
+            font-weight: 800;
+          }
+          p {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 400;
+          }
+        }
+      }
+      &:nth-child(1) figure > div > div {
+        background-position: 0px 0px !important;
+      }
+      &:nth-child(2) figure > div > div {
+        background-position: 0px 20% !important;
+      }
+      &:nth-child(3) figure > div > div {
+        background-position: 0px 40% !important;
+      }
+      &:nth-child(4) figure > div > div {
+        background-position: 0px 60% !important;
+      }
+      &:nth-child(5) figure > div > div {
+        background-position: 0px 80% !important;
+      }
+      &:nth-child(6) figure > div > div {
+        background-position: 0px 100% !important;
+      }
+
+    }
+  }
+
+  .active {
+    opacity: 1 !important;
+    transform: scale(1) translateZ(0px) !important;
+  }
+
+  .cf:before,
+  .cf:after {
+    content: " ";
+    display: table;
+  }
+
+  .cf:after {
+    clear: both;
+  }
+
+  .cf {
+    *zoom: 1;
+  }
+</style>
+<script>
+  var sliderTeam = (function(document, $) {
+
+    'use strict';
+
+    var $sliderTeams = $('.slider--teams'),
+    $list = $('#list'),
+    $listItems = $('#list li'),
+    $nItems = $listItems.length,
+    $nView = 3,
+    autoSlider,
+    $current = 0,
+    $isAuto = true,
+    $acAuto = 2500,
+
+    _init = function() {
+      _initWidth();
+      _eventInit();
+    },
+
+    _initWidth = function() {
+      $list.css({
+        'margin-left': Math.floor(100 / $nView) + '%',
+        'width': Math.floor(100 * ($nItems / $nView)) + '%'
+      });
+      $listItems.css('width', 100 / $nItems + '%');
+      $sliderTeams.velocity({ opacity: 1 }, { display: "block" }, { delay:1000 });
+    },
+
+    _eventInit = function() {
+
+      window.requestAnimFrame = (function() {
+        return  window.requestAnimationFrame       || 
+        window.webkitRequestAnimationFrame || 
+        window.mozRequestAnimationFrame    || 
+        window.oRequestAnimationFrame      || 
+        window.msRequestAnimationFrame     || 
+        function(callback, element){
+          window.setTimeout(callback, 1000 / 60);
+        };
+      })();
+
+      window.requestInterval = function(fn, delay) {
+        if( !window.requestAnimationFrame       && 
+          !window.webkitRequestAnimationFrame && 
+          !window.mozRequestAnimationFrame    && 
+          !window.oRequestAnimationFrame      && 
+          !window.msRequestAnimationFrame)
+          return window.setInterval(fn, delay);
+        var start = new Date().getTime(),
+        handle = new Object();
+
+        function loop() {
+          var current = new Date().getTime(),
+          delta = current - start;
+          if(delta >= delay) {
+            fn.call();
+            start = new Date().getTime();
+          }
+          handle.value = requestAnimFrame(loop);
+        };
+        handle.value = requestAnimFrame(loop);
+        return handle;
+      }
+
+      window.clearRequestInterval = function(handle) {
+        window.cancelAnimationFrame ? window.cancelAnimationFrame(handle.value) :
+        window.webkitCancelRequestAnimationFrame ? window.webkitCancelRequestAnimationFrame(handle.value)   :
+        window.mozCancelRequestAnimationFrame ? window.mozCancelRequestAnimationFrame(handle.value) :
+        window.oCancelRequestAnimationFrame ? window.oCancelRequestAnimationFrame(handle.value) :
+        window.msCancelRequestAnimationFrame ? msCancelRequestAnimationFrame(handle.value) :
+        clearInterval(handle);
+      };
+
+      $.each($listItems, function(i) {
+        var $this = $(this);
+        $this.on('touchstart click', function(e) {
+          e.preventDefault();
+          _stopMove(i);
+          _moveIt($this, i);
+        });
+      });
+
+      autoSlider = requestInterval(_autoMove, $acAuto);
+    },
+
+    _moveIt = function(obj, x) {
+
+      var n = x;
+
+      obj.find('figure').addClass('active');        
+      $listItems.not(obj).find('figure').removeClass('active');
+
+      $list.velocity({
+        translateX: Math.floor((-(100 / $nItems)) * n) + '%',
+        translateZ: 0
+      }, {
+        duration: 1000,
+        easing: [400, 26],
+        queue: false
+      });
+
+    },
+
+    _autoMove = function(currentSlide) {
+      if ($isAuto) { 
+        $current = ~~(($current + 1) % $nItems);
+      } else {
+        $current = currentSlide;
+      }
+      console.log($current);
+      _moveIt($listItems.eq($current), $current);
+    },
+
+    _stopMove = function(x) {
+      clearRequestInterval(autoSlider);
+      $isAuto = false;
+      _autoMove(x);
+    };
+
+    return {
+      init: _init
+    };
+
+  })(document, jQuery);
+
+  $(window).load(function(){
+    'use strict';
+    sliderTeam.init();
+  });
+</script>
+
+
+
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header class="main_menu">
+      <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" href="index.html">IZIFISO</a> </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="http://www.izifisotravelblogs.wordpress.com"  target="_blank">Blog</a></li>
+                <li><a href="http://www.izifiso.com/contactus">Contact Us</a></li>
+                <li><a href="http://www.izifiso.com/real_experience">Explore</a></li>
+                <script type="text/javascript">
+                  function search(){
+                    var se = document.getElementById('se').value
+                    window.location = "http://www.izifiso.com/testhp2/html/search.php?stxt="+se;
+                  }
+                  function runScript(e) {
+                    if (e.keyCode == 13) {
+                      var se = document.getElementById('se').value;
+                      window.location = "http://www.izifiso.com/search/"+se;
+                      return false;
+                    }
+                  }
+                </script>
+                <li class="serch_new hidden-sm">
+                 <div id="custom-search-input">
+                  <div class="input-group">
+
+                    <input onkeypress="return runScript(event);" id="se" class="  search-query form-control" placeholder="" type="text">
+                    <span  class="input-group-btn">
+                      <button class="btn btn-danger" type="button">
+                        <span onclick="search();" class=" glyphicon glyphicon-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li><a target="_blank" href="https://www.instagram.com/izifiso/" class="google_plus"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UCV_IFD-wv5Uofk7S6ZudWeg"  target="_blank" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/_izifiso_"  target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.facebook.com/izifiso/" target="_blank" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+              <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> <i class="fa fa-angle-down"></i> </a>
+                <ul class="dropdown-menu">
+
+                  <li style="display: "> <a href="#" data-toggle="modal" data-target="#LogInModal"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+                  <li style="display: none"><a href="http://www.izifiso.com/profile"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
+                  <li class="divider"></li>
+                  <li style="display: none"><a href="http://www.izifiso.com/testhp2/html/logout.php"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!--/.nav-collapse --> 
+        </div>
+      </nav>
+
+  <!--------------------------------------------------------start modal---------------------------------------> 
+  <!-- Large modal -->
+  
+  <div class="modal fade" id="LogInModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> ×</button>
+        <h4 class="modal-title" id="myModalLabel">Welcome to Izifiso</h4>
+      </div>
+      <div class="modal-body padControl">
+        <div class="row">
+          <div class="col-md-7 modalLeftSide" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;"> 
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
+              <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane active" id="Login">
+                <form  method="POST" role="form" class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <script type="js/sat.js"></script>
+                      <script type="text/javascript">
+                        function xc(){
+                          post("email="+fetch('l1').value+"&password="+fetch('l2').value,'http://www.izifiso.com/testhp2/html/login.php',function (e) {
+              //alert(e);
+              if(e==1){
+
+                parent.refreshpage();
+              }
+              else{
+                alert("Wrong Password");
+              }
+            });
+                        }
+                      </script>
+                      <input type="email" class="login_form_control" id="l1" name="email" placeholder="Email" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12 password-wraps">
+                      <input type="password" class="login_form_control" id="l2" name="password" id="exampleInputPassword1" placeholder="password" />
+                      <button type="button" class="showHide"><i class="glyphicon glyphicon-eye-open"></i></button>
+                    </div>
+                  </div>
+                  <div class="row btnHolder">
+                    <div class="col-sm-2"> </div>
+                    <div class="col-sm-5">
+                      <a href="#" data-toggle="modal" data-target="#ForgotPasswordModal">Forgot your password?</a>
+                    </div>
+                    <div class="col-sm-5">
+                      <button onclick="xc();" class="btn btn-custom SignUpBTN pull-right"> Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="tab-pane" id="Registration">
+                <form role="form" class="form-horizontal">
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="text" class="login_form_control" id="name" placeholder="Name" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="email" class="login_form_control" id="email" placeholder="Email" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <input type="email" class="login_form_control" id="mobile" placeholder="Mobile" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-sm-12 password-wraps">
+                      <input type="password" class="login_form_control password" id="password" placeholder="Password" />
+                      <button type="button" class="showHide"><i class="glyphicon glyphicon-eye-open"></i></button>
+
+                    </div>
+                  </div>
+                  <div class="row btnHolder">
+                    <!--  <div class="col-sm-2"> </div>-->
+                    <div class="col-sm-12 BtnControl">
+                      <button type="button" class="btn btn-custom SignUpBTN"> Save & Continue</button>
+                      <button type="button" class="btn btn-custom_normal SignUpBTN"> Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div id="OR" class="hidden-xs"> OR</div>
+          </div>
+          <div class="col-md-5 scocial_bg">
+            <div class="row text-center sign-with">
+              <div class="col-md-12">
+                <h3>SOCIAL SIGN-IN</h3>
+              </div>
+              <div class="col-md-12">
+                <div class="btn-group btn-group-justified"> 
+                 <script type="text/javascript" src="http://www.izifiso.com/fblogin/fb.js"></script>
+                 <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&redirect_uri=http%3A%2F%2Fizifiso.com%2Fglogin%2Findex.php&client_id=140263103375-v0k3lrafajpmdq1ivmg9rapk67qktfjv.apps.googleusercontent.com&scope=email+profile+OpenID&access_type=online&approval_prompt=auto" class="btn accountBTN BTN_G"> Google</a>
+                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+               </fb:login-button>
+               <br>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+
+
+<div class="modal fade" id="ForgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"> ×</button>
+      <h4 class="modal-title" id="myModalLabel">Welcome to Izifiso</h4>
+    </div>
+    <div class="modal-body padControl">
+      <div class="row">
+        <div class="col-md-12 modalLeftSide" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;"> 
+          <!-- Nav tabs -->
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="Login">
+              <form action="../../forgetpassword/send3.php" method="POST" role="form" class="form-horizontal">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <input type="email" class="login_form_control" name="email" id="email1" placeholder="Email" />
+                  </div>
+                </div>
+
+                <div class="row btnHolder">
+
+                  <div class="col-sm-6">
+                  </div>
+                  <div class="col-sm-6">
+                    <button type="submit" class="btn btn-custom SignUpBTN pull-right"> Submit</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</header>  <!--------------------------------------------------------endl modal--------------------------------------->
+<!--------------- start body --------------------> 
+<!--<section class="pageheader">
+<div class="container">
+ <ul>
+  <li><a href="#">Home</a></li>
+  <li>About Us</li>
+ </ul>
+ </div>
+</section>--> 
+<!--end pageheader-->
+
+<section class="about_inner">
+  <div class="about_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <figure><img src="images/about_image.jpg" alt=""></figure>
+          <h3>“I read; I travel; I become”  ― Derek Walcott<br>
+          </h3>
+          <p align="justify">What does your mind desire? A break from Concrete Jungles and iron cages, or a sunset with Spanish Guitar acoustics, or may be an adrenaline rush? Walks down green meadows, under a cerulean sky, or skinny dipping for fossils? Izifiso means desire, and we at Izifiso, give wings to your desires! There’s a world beyond you that you wish to embrace and we take great pleasure in taking you on its trail. Let Go! Chart a different route, eat from an uncharted menu, discover secrets from old-world streets and rediscover your own city with us. Travel away from home, feel your goose bumps, sweat under the scorching sun on an uphill trek, dance in the twilight sands to the waves that crash on the shore, whisper to the Mangroves, gape at the constellations and let the mountain winds lull you to sleep…listen to the fables that need to be heard, weave a new chapter for the story of your life. Izifiso is a travelling portal which likes to offer off-beat experiences to travelers which encompass an authentic exposure to the culture and lifestyle of places and their people. Our motto is: Explore, Educate, Evolve.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end about_top-->
+  <div class="about_middle" style="background-image:url(images/about_image2.jpg);">
+    <div class="container">
+      <h2>Why Choose Us</h2>
+      <div class="row clearfix">
+        <div class="col-sm-4">
+          <div class="service" style="height : 341px">
+            <div class="serviceicon"><i class="fa fa-star"></i></div>
+            <h3>Explore:</h3>
+            <p align="justify">Izifiso offers a variety of trips, from trails to treks that
+
+              are designed to help you explore your destination to the fullest.
+
+              We take pride in providing our customers complete freedom to
+
+            explore to their heart’s content, which other portals restrict.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="service" style="height : 341px">
+            <div class="serviceicon"><i class="fa fa-globe"></i></div>
+            <h3>Educate:</h3>
+            <p align="justify">We are a team of storytellers. Every trip is a story in
+
+              itself, every trek is a journey. From beaches that are struggling
+
+              due to Climate Change to monasteries that are eroding away, we
+
+              take our planet seriously. Our trips are designed in a way to
+
+              enhance your knowledge about our fragile environment and the
+
+              cultural diversity of the Indian Subcontinent, not just having
+
+            fun.</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="service" style="height : 341px">
+            <div class="serviceicon"><i class="fa fa-thumbs-up"></i></div>
+            <h3>Evolve:</h3>
+            <p align="justify">Izifiso believes that every person has something has
+              something special in them and Nature brings us closer to our
+
+              weaknesses and strengths. With each trip, we let you experience
+
+              something challenging and that helps you to evolve, not just as a
+
+              traveler, but as a human in general. That’s the reason perhaps
+
+              that Izifiso’s has been known to provide 100% customer
+
+            satisfaction and repeated customers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end about_middle--> 
+</section>
+<section class="team_block" >
+  <div class="container">
+    <h2 style="padding: 0px">Our Team</h2>
+    <div class="row">
+
+  
+      <div class="about-team-grid waypoint waypoint-reveal" >
+          
+          <div class="about-team-member step-up" >
+            <div class="about-team-hero" data-profile="jay">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/jay.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white"  >
+              <p>Jay has a healthy obsession with all things digital, strongly believing in the intersection of design and technology. Constantly exploring and prototyping new ideas, he'll jump at the chance to be involved in any aspect of a project. You may catch him reading Malcolm Gladwell or watching reruns of The Sopranos.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/jayhwd" target="_blank"><span class="ui-hidden">Jay on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://www.instagram.com/jayhollywood" target="_blank"><span class="ui-hidden">Jay on Instagram</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Jay Hollywood <br> <span style="font-size:12px;">Web Developer</span></h2>
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="karen">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/karen.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Lover of a good meme, Karen fancies both design and front-end development. She is an avid basketballer, runner and exercise junkie. Crocheting with a cup of tea in front of the telly? Yep you'll find her doing that, too.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/kazbok" target="_blank"><span class="ui-hidden">Karen on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://www.instagram.com/kazbok" target="_blank"><span class="ui-hidden">Karen on Instagram</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Karen Hollywood <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Co-founder / Front-end Development</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="lee">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/lee.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Lee is passionate about web development, has an appetite for luncheon meats and makes smart investments in fine ice-cream. In his spare time Lee utilises his creative talents building web games, experimenting with digital art and playing ultimate frisbee.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/lee_karolczak" target="_blank"><span class="ui-hidden">Lee on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://www.instagram.com/leekarolczak" target="_blank"><span class="ui-hidden">Lee on Instagram</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Lee Karolczak <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Development Lead</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="paul">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/paul.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Paul is obsessed with UI and enamoured by the evolution of Front-end development. If left unattended, he'll beautiful mind that code all over your windows. In his spare time, Paul can be found performing in musicals, folding origami dinosaurs, drawing comic books or singing karaoke.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/paulspencer" target="_blank"><span class="ui-hidden">Paul on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://instagram.com/paulspencer" target="_blank"><span class="ui-hidden">Paul on Instagram</span></a>
+                <a class="bio-social bio-dr" href="https://dribbble.com/paulspencer" target="_blank"><span class="ui-hidden">Paul on Dribbble</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Paul Spencer <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+           <!--  <h3>Design &amp; Front-end Development</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="mark">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/mark.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Mark helps our clients achieve their brand vision in the digital space through strategic advice and streamlined project management. He also helps fellow musicians achieve their band vision in the analogue space as a freelance bassist. It's kind of the same thing to him.</p>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Mark Gale <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!--   -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="dedy">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/dedy.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Dedy is a compulsive tinkerer with technology. He susceptible to long hiccups and when he's not fishing quadcopters out of a tree he can be found building contraptions with his kids.</p>
+                <a class="bio-social bio-tw" href="https://twitter.com/dedy" target="_blank"><span class="ui-hidden">Dedy on Twitter</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Dedy Lawidjaja <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Web &amp; Mobile Developer</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="kylie">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/kylie.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Kylie's soft spot is for thoughtful and simple design. She's most curious about where communication meets psychology but won't deny getting stupidly fixated on pixels either. Hot chip connoisseur, icecream addict and celery nemesis; it’s not always about food - sometimes she talks about that show <em>Charmed</em> too.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/kylietimpani" target="_blank"><span class="ui-hidden">Kylie on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://instagram.com/kyt_" target="_blank"><span class="ui-hidden">Kylie on Instagram</span></a>
+                <a class="bio-social bio-dr" href="https://dribbble.com/kylietimpani" target="_blank"><span class="ui-hidden">Kylie on Dribbble</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Kylie Timpani <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Senior Designer</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="chris">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/chris.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Chris loves to make things: when not programming he brews beer and gardens (mostly to grow things to put in beer). Chris thinks his wife throws the best dinner parties and happily scrubs pots to contribute.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/botman" target="_blank"><span class="ui-hidden">Chris on Twitter</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Chris Botman <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Web &amp; Mobile Developer</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="jesse">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/jesse.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Jesse digs exploring the ever changing landscape of front-end development. He has a (slight) obsession with watching the BOM rain radar and when not cloud spotting presents a bit of community radio.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/jesseyuen" target="_blank"><span class="ui-hidden">Jesse on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://instagram.com/jesse_jumps_high" target="_blank"><span class="ui-hidden">Jesse on Instagram</span></a>
+                <a class="bio-social bio-dr" href="http://www.dribbble.com/jesseyuen" target="_blank"><span class="ui-hidden">Jesse on Dribbble</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Jesse Yuen <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+           <!--  <h3>UX &amp; Front-end Development</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="danm">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/danm.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Great designs and brilliant interactions are both key to keeping Dan enthusiastic about the web. When not pushing pixels or dropping code, it's been reported Dan has aspirations for variable facial hair.</p>
+                <a class="bio-social bio-ig" href="http://instagram.com/ddmoore" target="_blank"><span class="ui-hidden">Dan on Instagram</span></a>
+                <a class="bio-social bio-dr" href="https://dribbble.com/danmoore" target="_blank"><span class="ui-hidden">Dan on Dribbble</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Dan Moore <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Design &amp; Front-end Development</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="jess">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/jess.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Jess has a serious design crush but a business brain, so she's naturally found a home at Humaan flexing her management muscle and keeping the creatives in line. She likes to taunt the other Humaans by avoiding board game sessions but loves to socialise on the outskirts. She is the perfect ying, to their nerd yang.</p>
+                <a class="bio-social bio-tw" href="http://www.twitter.com/jessstanley7" target="_blank"><span class="ui-hidden">Jess on Twitter</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Jess Stanley <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Project Manager</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="sandy">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/sandy.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Sandy writes and writes. She also makes stuff out of yarn, paper, fabric, clay, electronics, old boxes and whatever else she can get her hands on. You’ll usually find her gardening, gaming, training or playing a spot of football.</p>
+                <a class="bio-social bio-tw" href="http://twitter.com/sandysandy" target="_blank"><span class="ui-hidden">Sandy on Twitter</span></a>
+                <a class="bio-social bio-ig" href="http://instagram.com/pizzathyme" target="_blank"><span class="ui-hidden">Sandy on Instagram</span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Sandy Lim <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+            <!-- <h3>Words</h3> -->
+          </div>
+          <div class="about-team-member step-up">
+            <div class="about-team-hero" data-profile="matt">
+              <video playsinline="" autoplay="autoplay" loop="loop" muted="" src="http://localhost/izifiso_html/video/matt.mp4"></video>
+              <div class="bio" style="font-size: 12px;color: white">
+                <p>Forever playing with technology. Matt loves to get his hands dirty with all kinds of development and systems administration. When away from the screen Matt can usually be found ranking burgers by deliciousness.</p>
+                <a class="bio-social bio-tw" href="https://twitter.com/mattyboddy" target="_blank"><span class="ui-hidden">Matt on Twitter</span></a>
+                <a class="bio-social bio-ig" href="https://www.instagram.com/matt.boddy/" target="_blank"><span class="ui-hidden">Matt on Instagram <br> <span style="font-size:12px;">Web Developer</span>  </span></a>
+              </div>
+            </div>
+            <h2 style="margin:15px 0 0;font-size:15px;font-weight:400;font-family:GT Walsheim Bold,GT Walsheim Regular,HelveticaNeue,Helvetica Neue,Helvetica,Arial,sans-serif;padding: 0px">Matt Boddy <br> <span style="font-size:12px;">Web Developer</span>  </h2>
+          </div>
+          
+          
+          <!-- Got what it takes? -->
+          <div class="about-team-member step-up enticer">
+            <div class="about-team-hero">
+              <a href="mailto:careers@humaan.com" class="got-the-chops">
+                <div class="got-the-chops-innner" style="font-size: 12px">
+                  <h2>Mind the gap</h2>
+                  <h3>No current vacancies, but we're always on the lookout for talented humaans. Drop us a line.</h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+
+
+
+      <!-- Old Team Patten -->
+      <!-- <div class="col-md-3 col-sm-3">
+        <div class="our-team"> <img src="images/Tem_pic_1.jpg" alt="">
+          <div class="team-prof text-center">
+            <h3>Gopal Paul</h3>
+            <span>Jack Sparrow</span>
+            <div class="team_text" style="overflow: scroll;">
+              <p align="left" class="description"> All hail our Jack Sparrow! The
+                Captain of our Ship! After his Post-graduation and MBA, the
+                man went to live in the forests and he came back as a weirdo
+                obsessed with Nature and dragged a bunch of crazy people to
+                establish his dream, Izifiso, where desires get wings. Besides
+                guiding his team all day long, he likes painting, teasing his
+                colleagues and doing random shit, because he is still a kid in his
+                head. Jack Sparrow can single-handedly raise the heat of any
+                campfire with his Jabberwocky moves and enthusiasm to deliver
+              an amazing experience to every soul that trusts him. </p>
+            </div>
+          </div>
+          <ul class="social-links text-center">
+            <li><a href="#" class="fa fa-facebook" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-twitter" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-google-plus" style="font-size: 20px"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="our-team"> <img src="images/Tem_pic_2.jpg" alt="">
+          <div class="team-prof text-center">
+            <h3>Mehebub A Alam</h3>
+            <span>White Knight</span>
+            <div class="team_text" style="overflow: scroll;">
+              <p align="justify" class="description"> Meet the White Knight of
+                Izifiso, Mehboob! A geologist with lost faith in the corporate
+                world, he is the head in operations, working hard every day to
+                execute trip designs perfectly. He looks like an introvert but
+                wait till he lets his guard down; he’s going to teach you how to
+                party after that! Our White Knight believes in the existence of
+                an almighty and thus, attempts to help our travelers enjoy the
+              pull of nature and safeguard it at the same time. </p>
+            </div>
+          </div>
+          <ul class="social-links text-center">
+            <li><a href="#" class="fa fa-facebook" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-twitter" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-google-plus" style="font-size: 20px"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="our-team"> <img src="images/Tem_pic_3.jpg" alt="">
+          <div class="team-prof text-center">
+            <h4><b>Manaska Mukhopadhyay</b></h4>
+            <span>Zen</span>
+            <div class="team_text" style="overflow: scroll;">
+              <p align="justify" class="description"> Meet our very own version of
+                Philip Hyde, Manaska, the man in charge of photography and                videography. He makes sure that our travelers get their requisite
+                insight into a place, keeping alive the authenticity and magic of
+                the place at the same time. He is the Zen man, calm and
+                composed at all times, but equally fanatic when its Liverpool on
+              the field! </p>
+            </div>
+          </div>
+          <ul class="social-links text-center">
+            <li><a href="#" class="fa fa-facebook" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-twitter" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-google-plus" style="font-size: 20px"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-3">
+        <div class="our-team"> <img src="images/Tem_pic_4.jpg" alt="">
+          <div class="team-prof text-center">
+            <h3>Satyaki Majumdar</h3>
+            <span>Tech Wiz</span>
+            <div class="team_text" style="overflow: scroll;">
+              <p align="justify" class="description"> Here’s our Tech-Wizard,
+                Satyaki! He is the chief backend developer of Izifiso. In this world of Cyber domination, we are helpless without him.</p>
+            </div>
+          </div>
+          <ul class="social-links text-center">
+            <li><a href="https://www.facebook.com/satyaki.majumdar1" class="fa fa-facebook" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-twitter" style="font-size: 20px"></a></li>
+            <li><a href="#" class="fa fa-google-plus" style="font-size: 20px"></a></li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!--end_team-->
+
+<div class="testimonialbg"   style="background-image:url(images/testimonial.jpg);">
+  <div class="container">
+    <h2>What Customers Say</h2>
+    <div class="row carousel">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000"> 
+
+          <ol class="carousel-indicators">
+            <li data-target="#fade-quote-carousel" data-slide-to="0" class=""></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="1" class=""></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="2" class=""></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="3" class=""></li>
+            <li data-target="#fade-quote-carousel" data-slide-to="4" class=""></li>
+          </ol>
+
+          <div class="carousel-inner">
+            <div class="item active">
+              <blockquote>
+                <p> A trip to remember for a lifetime !! It was an amazing experience. Went to Gorkhey 6th April, 2017, it is just WOW, couldn't ask for anything better than this. The suggestions they made for us were fantastic. Starting from home stay at Himalayan foothills, scenic beauty, sitting beside Gorkhey river at midnight and watching star trails, the results met and exceeded every expectations. Fantastic trip, beautifully organized, was simply spectacular, the service and the attention that we have received was really great. Thanks a ton IZIFISO, keep going and all the very best for all your future endeavors.
+                </p>
+                <h4> Arpita Roy</h4>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p> Our trip to Mosuni Island at the end of February was amazing! For someone who isn't traveling on a boat so often it was a remarkable experience. We even had a chance to taste some amazing Indian food on our way there! Once we reached the island, we went to explore it a bit more. Amazing shores on one side and fascinating mangrove forests on the other! After this healing-mud-trip we went to a small village to meet local people. We learned about their lifestyle and their growing struggle. Thanks to colaboration between oikos Kolkata and izifiso we tried to brainstorm and further elaborate the solution for the problem locals are facing for a couple of months already. 
+                Keep up the great work - you are the proof that the change can be achieved if you try hard enough. And I, on behalf of oikos Prague, am very thankful for that..</p>
+                <h4>Vedad Kurtović</h4>
+              </blockquote>
+            </div>
+            <div class="item">
+              <blockquote>
+                <p> Would like to express my sincere gratitude to IzIfiso being such wonderful holiday makers.. Sepi- Gorkhey trek was a first for us just mother and son ...and we were a bit sceptical but the organisers ensured a warm and comfortable stay at each of the locations. Whistling pine forests running into miles, starry nights, dancing streams , vast grassy meadows, colourful birds , gracious hosts and the confident and informative guides - we got all this and much more. Pictures say it all. Thank u Izifiso and Thank u Gopal .. Looking forward to many such experiences with Izifiso. It has been especially informative journey for my 13 yr old son .. Knowing about the Himalyas , Rocks, birds and trees and meeting up with interesting people. Will be recommending Izifiso to all my friends and family .</p>
+                <h4>Sonu Bose</h4>
+              </blockquote>
+
+            </div>
+            <div class="item">
+              <blockquote>
+                <p> 
+                I have been to the Himalayas many times as a tourist but Izifiso's trekking holiday helped me connect with the mountains, the people living there and their lifestyles for the first time.</p>
+                <h4>
+                  Eva Kisku
+                </h4>
+              </blockquote>
+              
+            </div>
+            <div class="item">
+              <blockquote>
+                <p> 
+                  It was such a lovely experience. I think with Izifiso our mentality changed and we mingled smoothly. For me that made the trip more satisfying. Staying at home stays was another nice concept. Dil khus ho gaya.
+                </p>
+                <h4>
+                  Sudip Chakraborty
+                </h4>
+              </blockquote>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<!--end testimonialbg--> 
+
+<!--------------- end body -------------------->
+<footer class="footer_line">
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-sm-6">
+        <div class="copyright_text">
+          <p>&copy; www.izifiso.com 2017</p>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="right_footer">
+          <p> All Rights are Reserved <a href="https://www.instagram.com/izifiso/" target="_blank" class="google_plus"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a href="https://www.youtube.com/channel/UCV_IFD-wv5Uofk7S6ZudWeg" target="_blank" class="youtube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a> <a href="https://twitter.com/_izifiso_" target="_blank" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a href="https://www.facebook.com/izifiso/" target="_blank" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+
+<!---------------------------login and forgot password js 23-03-2017----------------------------> 
+<script type="text/javascript">
+ $(document).ready(function() {
+  $('#myModal').modal('show')
+});
+</script> 
+
+
+<script type="text/javascript">
+ $(document).ready(function () {
+   $(".showHide").click(function () {
+     if ($(".password").attr("type")=="password") {
+       $(".password").attr("type", "text");
+     }
+     else{
+       $(".password").attr("type", "password");
+     }
+
+   });
+ });
+</script>
+
+
+<!---------------------------login and forgot password js 23-03-2017---------------------------->
+
+</body>
+</html>
